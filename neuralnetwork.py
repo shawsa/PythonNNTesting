@@ -9,7 +9,7 @@ def serial_derivative(z):
 transfer = np.vectorize(sigmoid)
 derivative = np.vectorize(serial_derivative)
 
-class BackPropNN:
+class NeuralNetwork:
 	weights = []
 	bias = []
 	def __init__(self,inputs, outputs, hidden_layers, hidden_layer_size):

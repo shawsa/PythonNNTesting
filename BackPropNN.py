@@ -12,12 +12,11 @@ derivative = np.vectorize(serial_derivative)
 class BackPropNN:
 	weights = []
 	bias = []
-	def __init__(self,inputs, outputs, hidden_layers, hidden_layer_size, learning_rate):
+	def __init__(self,inputs, outputs, hidden_layers, hidden_layer_size):
 		self.inputs = inputs
 		self.hidden_layers = hidden_layers
 		self.hidden_layer_size = hidden_layer_size
 		self.outputs = outputs
-		self.learning_rate = learning_rate
 		weights = []
 		bias = []
 		for l in range(1+hidden_layers):
@@ -52,7 +51,7 @@ class BackPropNN:
 			print("bias")
 			print(self.bias[l])
 	
-	def back_prop(self, arr_inputs, arr_outputs):
+	def back_prop(self, arr_inputs, arr_outputs, learning_rate):
 		activation = []
 		weighted_inputs = []
 		gradient = []
@@ -90,7 +89,7 @@ class BackPropNN:
 			print(weighted_inputs[l])
 			print("gradient")
 			print(gradient[l])'''
-			self.weights[l] = self.weights[l] - self.learning_rate * (gradient[l]*(activation[l-1].T))
-			self.bias[l] = self.bias[l] - self.learning_rate * gradient[l]
+			self.weights[l] = self.weights[l] - learning_rate * (gradient[l]*(activation[l-1].T))
+			self.bias[l] = self.bias[l] - learning_rate * gradient[l]
 		#print("new: ", self.output(arr_inputs))
 			

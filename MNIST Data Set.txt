@@ -1,0 +1,5 @@
+Data Set:
+http://yann.lecun.com/exdb/mnist/
+
+Tutorial on decoding it:
+http://feltes.ch/index.php/2015/09/20/mnist-handwritten-digits-database-decoding-with-python/
